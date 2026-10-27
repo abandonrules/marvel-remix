@@ -44,7 +44,7 @@
       <div id="{{@key}}" class="collapse" role="tabpanel" data-parent="#cards" aria-labelledby="{{@key}}-header">
         <ul class="list-group">
           {{#each this}}
-          <li class="list-group-item {{type}}" onclick="addToView('{{id}}')"><span class="badge badge-secondary">{{strength}}</span> {{{i18n id '.name'}}}</li>
+          <li class="list-group-item {{type}}" onclick="addToView('{{id}}')"><span class="badge badge-secondary">{{strength}}</span> {{{i18n id '.name'}}}{{#if owners}} <span class="owners">({{#each owners}}P{{this}}{{#unless @last}}, {{/unless}}{{/each}})</span>{{/if}}</li>
           {{/each}}
         </ul>
       </div>
@@ -162,6 +162,7 @@
             </div>
           </div>
         </div>
+        <div id="players" style="margin-bottom:0.4rem;"></div>
         <div id="hand">
         </div>
       </div>
